@@ -628,5 +628,28 @@ a:focus {
 #diapositiva9 img{
   margin: 0 auto;
   display: block;
-  width: 100%;
+  width: 40%;
+}
+
+#diapositiva11 img{
+  margin: 0 auto;
+  display: block;
+  width: 40%;
+}
+
+#diapositiva12 img{
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+}
+#diapositiva13 img{
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+}
+
+#diapositiva14 img{
+  margin: 0 auto;
+  display: block;
+  width: 60%;
 }
