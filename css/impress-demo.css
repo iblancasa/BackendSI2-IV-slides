@@ -617,3 +617,10 @@ a:focus {
   display: block;
   width: 60%;
 }
+
+
+#diapositiva8 img{
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
