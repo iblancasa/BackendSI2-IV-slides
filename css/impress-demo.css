@@ -1,40 +1,11 @@
-/*
-    So you like the style of impress.js demo?
-    Or maybe you are just curious how it was done?
-
-    You couldn't find a better place to find out!
-
-    Welcome to the stylesheet impress.js demo presentation.
-
-    Please remember that it is not meant to be a part of impress.js and is
-    not required by impress.js.
-    I expect that anyone creating a presentation for impress.js would create
-    their own set of styles.
-
-    But feel free to read through it and learn how to get the most of what
-    impress.js provides.
-
-    And let me be your guide.
-
-    Shall we begin?
-*/
 
 
-/*
-    We start with a good ol' reset.
-    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
-
-    You can probably argue if it is needed here, or not, but for sure it
-    doesn't do any harm and gives us a fresh start.
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
@@ -57,9 +28,7 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
-ol, ul {
-    list-style: none;
-}
+
 blockquote, q {
     quotes: none;
 }
@@ -608,16 +577,7 @@ a:focus {
     -o-transform:      translateY(400px);
     transform:         translateY(400px);
 
-    /*
-        Now let's imagine that the hint is visible and we want to fade it out and move out
-        of the screen.
 
-        So we define the transition on the opacity property with 1s duration and another
-        transition on transform property delayed by 1s so it will happen after the fade out
-        on opacity finished.
-
-        This way user will not see the hint moving down.
-    */
     -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
     -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
     -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
@@ -625,19 +585,10 @@ a:focus {
     transition:         opacity 1s,         transform 0.5s 1s;
 }
 
-/*
-    Now we 'enable' the hint when presentation is initialized ...
-*/
 .impress-enabled .hint { display: block }
 
-/*
-    ... and we will show it when the first step (with id 'bored') is active.
-*/
 .impress-on-bored .hint {
-    /*
-        We remove the transparency and position the hint in its default fixed
-        position.
-    */
+
     opacity: 1;
 
     -webkit-transform: translateY(0px);
@@ -646,14 +597,6 @@ a:focus {
     -o-transform:      translateY(0px);
     transform:         translateY(0px);
 
-    /*
-        Now for fade in transition we have the oposite situation from the one
-        above.
-
-        First after 4.5s delay we animate the transform property to move the hint
-        into its correct position and after that we fade it in with opacity
-        transition.
-    */
     -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
     -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
     -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
@@ -661,43 +604,16 @@ a:focus {
     transition:         opacity 1s 5s,         transform 0.5s 4.5s;
 }
 
-/*
-    And as the last thing there is a workaround for quite strange bug.
-    It happens a lot in Chrome. I don't remember if I've seen it in Firefox.
 
-    Sometimes the element positioned in 3D (especially when it's moved back
-    along Z axis) is not clickable, because it falls 'behind' the <body>
-    element.
-
-    To prevent this, I decided to make <body> non clickable by setting
-    pointer-events property to `none` value.
-    Value if this property is inherited, so to make everything else clickable
-    I bring it back on the #impress element.
-
-    If you want to know more about `pointer-events` here are some docs:
-    https://developer.mozilla.org/en/CSS/pointer-events
-
-    There is one very important thing to notice about this workaround - it makes
-    everything 'unclickable' except what's in #impress element.
-
-    So use it wisely ... or don't use at all.
-*/
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
 
-/*
-    There is one funny thing I just realized.
+#diapositiva1{
+  text-align: center;
+}
 
-    Thanks to this workaround above everything except #impress element is invisible
-    for click events. That means that the hint element is also not clickable.
-    So basically all of this transforms and delayed transitions trickery was probably
-    not needed at all...
-
-    But it was fun to learn about it, wasn't it?
-*/
-
-/*
-    That's all I have for you in this file.
-    Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
-    for you.
-*/
+#diapositiva1 img{
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+}
